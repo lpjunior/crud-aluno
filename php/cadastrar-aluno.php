@@ -8,7 +8,7 @@
         die;
     }
 
-    if(fnGravarAluno($_POST['txtNome'], $_POST['txtEmail'], $_POST['txtTel'])) {
+    if(fnAddAluno($_POST['txtNome'], $_POST['txtEmail'], $_POST['txtTel'])) {
         $status = 'add-success';
     } else {
         $status = 'add-fail';

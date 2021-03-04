@@ -1,7 +1,7 @@
 <?php
 require_once('./conexao.php');
 
-function fnGravarAluno($nome, $email, $telefone)
+function fnAddAluno($nome, $email, $telefone)
 {
     $link = getConnection();
 

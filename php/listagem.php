@@ -47,6 +47,21 @@
     <main style="background-color: rgb(240, 234, 234);">
         <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
             <div class="shadow p-5 mb-5 bg-body rounded-3 text-center w-50 p-3">
+                <?php
+                    if($_GET['f'] == 'add-success') {
+                        echo '<div class="text-success text-right justify-content-end align-content-end">Gravado com sucesso</div>';
+                    } elseif($_GET['f'] == 'add-fail') {
+                        echo '<div class="text-danger text-right justify-content-end align-content-end">Falha ao gravar</div>';
+                    } elseif($_GET['f'] == 'edt-success') {
+                        echo '<div class="text-success text-right justify-content-end align-content-end">Editado com sucesso</div>';
+                    } elseif($_GET['f'] == 'edt-fail') {
+                        echo '<div class="text-danger text-right justify-content-end align-content-end">Falha ao editar</div>';
+                    } elseif($_GET['f'] == 'del-success') {
+                        echo '<div class="text-success text-right justify-content-end align-content-end">Excluído com sucesso</div>';
+                    } elseif($_GET['f'] == 'del-fail') {
+                        echo '<div class="text-danger text-right justify-content-end align-content-end">Falha ao excluir</div>';
+                    }
+                ?>
                 <table class="table">
                     <thead>
                       <tr>
@@ -67,8 +82,8 @@
                             <td><?=$aluno['nome'] ?></td>
                             <td><?=$aluno['email'] ?></td>
                             <td><?=$aluno['telefone'] ?></td>
-                            <td><a href="editar.php?id=<?=$aluno['id'] ?>"><i class="fa fa-pencil-square-o text-primary" aria-hidden="true"></i></a></td>
-                            <td><a href="deletar.php?id=<?=$aluno['id'] ?>"><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a></td>
+                            <td><a href="edita.php?id=<?=$aluno['id'] ?>"><i class="fa fa-pencil-square-o text-primary" aria-hidden="true"></i></a></td>
+                            <td><a href="excluir-aluno.php?id=<?=$aluno['id'] ?>"><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a></td>
                         </tr>
                         <?php
                             }

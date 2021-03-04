@@ -1,4 +1,5 @@
 <?php
+
 $status = $_GET['f'];
 
 switch ($status) {
